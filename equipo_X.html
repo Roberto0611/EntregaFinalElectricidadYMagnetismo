@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Equipo 7 — Partícula Confinada</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #f4f6f9;
+      color: #1a1a2e;
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+      color: #fff;
+      text-align: center;
+      padding: 3rem 1.5rem 2.5rem;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+    }
+
+    header p.subtitle {
+      font-size: 1rem;
+      opacity: 0.75;
+      margin-bottom: 0.6rem;
+    }
+
+    header ul.members {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 1.5rem;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+
+    header ul.members li::before {
+      content: "▸ ";
+      opacity: 0.6;
+    }
+
+    .video-wrapper {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .video-wrapper video {
+      width: 560px;
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .model-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .model-wrapper iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 2.5rem auto;
+      padding: 0 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    }
+
+    section > h2 {
+      font-size: 1.4rem;
+      color: #0f3460;
+      border-left: 4px solid #e94560;
+      padding-left: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── Perfiles ── */
+    .profiles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .profile-card {
+      background: #f9fafb;
+      border-radius: 10px;
+      padding: 1.25rem;
+      text-align: center;
+      border: 1px solid #e8ecf0;
+    }
+
+    .profile-card .profile-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      margin: 0 auto 1rem;
+      border: 3px solid #c0cce0;
+    }
+
+    .profile-card h3 {
+      font-size: 1rem;
+      color: #0f3460;
+      margin-bottom: 0.2rem;
+    }
+
+    .profile-card .career {
+      font-size: 0.8rem;
+      color: #e94560;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .profile-card p {
+      font-size: 0.83rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* ── Proceso ── */
+    #proceso ol {
+      padding-left: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    #proceso ol li {
+      background: #f4f6f9;
+      border-radius: 8px;
+      padding: 0.9rem 1.1rem;
+      border-left: 3px solid #0f3460;
+      color: #555;
+      font-style: italic;
+    }
+
+    /* ── Metacognición ── */
+    #metacognicion .meta-entries {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .meta-entry {
+      background: #f9fafb;
+      border-radius: 8px;
+      padding: 1.1rem 1.4rem;
+      border-left: 4px solid #e94560;
+    }
+
+    .meta-entry h3 {
+      font-size: 0.95rem;
+      color: #0f3460;
+      margin-bottom: 0.5rem;
+    }
+
+    .meta-entry p {
+      font-size: 0.88rem;
+      color: #555;
+      font-style: italic;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       1. PRESENTACIÓN DEL EQUIPO
+  ══════════════════════════════════════════ -->
+  <header>
+    <h1>Equipo X</h1>
+    <p class="subtitle">TC1004 · Partícula Confinada — Simulación de las Tres Fases</p>
+
+    <ul class="members">
+      <li>Aldo Karim</li>
+      <li>Alejandro Montoya</li>
+      <li>Roberto Ochoa</li>
+      <li>Carlos Taboada</li>
+    </ul>
+
+    <div class="video-wrapper">
+      <video controls>
+        <source src="resources/video.mp4" type="video/mp4" />
+        Tu navegador no soporta reproducción de video.
+      </video>
+    </div>
+
+  </header>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════
+         2. PERFILES PROFESIONALES
+    ══════════════════════════════════════════ -->
+    <section id="perfiles">
+      <h2>Perfiles Profesionales</h2>
+
+      <div class="profiles-grid">
+
+        <!-- Aldo Karim -->
+        <div class="profile-card">
+          <img class="profile-photo" src="resources/aldo_karim.jpg" alt="Aldo Karim" />
+          <h3>Aldo Karim</h3>
+          <p class="career">ITC</p>
+          <p>[Semblanza de Aldo — máximo 80 palabras sobre su background e intereses en la ingeniería.]</p>
+        </div>
+
+        <!-- Alejandro Montoya -->
+        <div class="profile-card">
+          <img class="profile-photo" src="resources/alejandro_montoya.jpg" alt="Alejandro Montoya" />
+          <h3>Alejandro Montoya</h3>
+          <p class="career">IRS</p>
+          <p>En la ingeniería, me interesa la creación de sistemas tecnológicos automatizados, como robots, drones y vehículos autonomos. Me intersa la programación y ML.</p>
+        </div>
+
+        <!-- Roberto Ochoa -->
+        <div class="profile-card">
+          <img class="profile-photo" src="resources/roberto_ochoa.jpg" alt="Roberto Ochoa" />
+          <h3>Roberto Ochoa</h3>
+          <p class="career">ITC</p>
+          <p>[Semblanza de Roberto — máximo 80 palabras sobre su background e intereses en la ingeniería.]</p>
+        </div>
+
+        <!-- Carlos Taboada -->
+        <div class="profile-card">
+          <img class="profile-photo" src="resources/carlos_taboada.jpg" alt="Carlos Taboada" />
+          <h3>Carlos Taboada</h3>
+          <p class="career">ITC</p>
+          <p>[Semblanza de Carlos — máximo 80 palabras sobre su background e intereses en la ingeniería.]</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         3. PROCESO DE SOLUCIÓN DEL RETO
+    ══════════════════════════════════════════ -->
+    <section id="proceso">
+      <h2>Proceso de Solución del Reto</h2>
+      <ol>
+        <li>[Paso 1 — Descripción del primer paso de ingeniería que siguió el equipo para entender y plantear el problema.]</li>
+        <li>[Paso 2 — Descripción del diseño y modelado matemático de la partícula confinada y sus tres fases.]</li>
+        <li>[Paso 3 — Descripción del proceso de programación: cómo se construyó el código y las decisiones técnicas tomadas.]</li>
+        <li>[Paso 4 — Descripción de cómo se acoplaron las tres fases de confinamiento en una solución integrada.]</li>
+        <li>[Paso 5 — Descripción de las pruebas, ajustes y validación del resultado final.]</li>
+      </ol>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         4. METACOGNICIÓN INDIVIDUAL
+            (Orden alfabético por primer apellido)
+            K · M · O · T
+    ══════════════════════════════════════════ -->
+    <section id="metacognicion">
+      <h2>Metacognición Individual</h2>
+
+      <div class="meta-entries">
+
+        <!-- Karim, Aldo -->
+        <div class="meta-entry">
+          <h3>Aldo Karim</h3>
+          <p>[Reflexión de Aldo sobre su proceso de aprendizaje: qué habilidades desarrolló, qué le impactó más y cuál fue su parte favorita del reto.]</p>
+        </div>
+
+        <!-- Montoya, Alejandro -->
+        <div class="meta-entry">
+          <h3>Alejandro Montoya</h3>
+          <p>[Reflexión de Alejandro sobre su proceso de aprendizaje: qué habilidades desarrolló, qué le impactó más y cuál fue su parte favorita del reto.]</p>
+        </div>
+
+        <!-- Ochoa, Roberto -->
+        <div class="meta-entry">
+          <h3>Roberto Ochoa</h3>
+          <p>[Reflexión de Roberto sobre su proceso de aprendizaje: qué habilidades desarrolló, qué le impactó más y cuál fue su parte favorita del reto.]</p>
+        </div>
+
+        <!-- Taboada, Carlos -->
+        <div class="meta-entry">
+          <h3>Carlos Taboada</h3>
+          <p>[Reflexión de Carlos sobre su proceso de aprendizaje: qué habilidades desarrolló, qué le impactó más y cuál fue su parte favorita del reto.]</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         5. MODELO 3D
+    ══════════════════════════════════════════ -->
+    <section id="modelo3d">
+      <h2>Modelo 3D — Partícula Confinada</h2>
+      <div class="model-wrapper">
+        <iframe
+          title="Partícula Confinada — Modelo 3D"
+          src="https://sketchfab.com/models/fb586f5f91ae4b11a8da100997fed1f6/embed"
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          allowfullscreen
+          mozallowfullscreen="true"
+          webkitallowfullscreen="true">
+        </iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Equipo X · TC1004 · Tecnológico de Monterrey · 2026</p>
+  </footer>
+
+</body>
+</html>
